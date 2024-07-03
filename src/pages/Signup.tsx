@@ -28,13 +28,13 @@ const SignupSchema = object(
     ]),
     email: string('Adresse email valide', [email('Adresse email invalide.')]),
     password: string('Le mot de passe est invalide.', [
-      minLength(8, 'Le mot de passe doit contenir au moins 8 charactères.'),
-      maxLength(128, 'Le mot de passe doit contenir au plus 128 charactères.'),
+      minLength(8, 'Le mot de passe doit contenir au moins 8 caractères.'),
+      maxLength(128, 'Le mot de passe doit contenir au plus 128 caractères.'),
       regex(/[0-9]/, 'Le mot de passe doit contenir un chiffre.'),
-      regex(/[^A-Za-z0-9]/, 'Le mot de passe doit contenir un charactère spécial.'),
+      regex(/[^A-Za-z0-9]/, 'Le mot de passe doit contenir un caractère spécial.'),
       regex(
-        /[^A-Za-z0-9$!%*+-?&#_=.,:;@]{8,128}/,
-        'Les charactères spéciaux autorisés sont $!%*+-?&#_=.,:;@',
+        /[A-Za-z0-9$!%*+-?&#_=.,:;@]{8,128}/,
+        'Les caractères spéciaux autorisés sont $!%*+-?&#_=.,:;@',
       ),
     ]),
     confirmationPassword: string(
@@ -58,13 +58,13 @@ const SignupSchemaMFS = object(
     ]),
     email: string('Adresse email valide', [email('Adresse email invalide.')]),
     password: string('Le mot de passe est invalide.', [
-      minLength(8, 'Le mot de passe doit contenir au moins 8 charactères.'),
-      maxLength(128, 'Le mot de passe doit contenir au plus 128 charactères.'),
+      minLength(8, 'Le mot de passe doit contenir au moins 8 caractères.'),
+      maxLength(128, 'Le mot de passe doit contenir au plus 128 caractères.'),
       regex(/[0-9]/, 'Le mot de passe doit contenir un chiffre.'),
-      regex(/[^A-Za-z0-9]/, 'Le mot de passe doit contenir un charactère spécial.'),
+      regex(/[^A-Za-z0-9]/, 'Le mot de passe doit contenir un caractère spécial.'),
       regex(
-        /[^A-Za-z0-9$!%*+-?&#_=.,:;@]{8,128}/,
-        'Les charactères spéciaux autorisés sont $!%*+-?&#_=.,:;@',
+        /[A-Za-z0-9$!%*+-?&#_=.,:;@]{8,128}/,
+        'Les caractères spéciaux autorisés sont $!%*+-?&#_=.,:;@',
       ),
     ]),
     confirmationPassword: string(

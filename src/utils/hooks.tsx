@@ -20,9 +20,11 @@ export const useFetch = async (url: string, method: string, props): Promise<any>
     if (!response.ok) {
       throw new Error(`Fetch failed with status: ${response.status}`)
     }
-
+    console.log('URL = ', url)
+    console.log('Response = ', response)
     if (url.includes('start')) return response
     const jsonData = await response.json()
+    console.log('JSON response = ', jsonData)
     return jsonData
   } catch (error) {
     console.error('An error occurred: ', error)

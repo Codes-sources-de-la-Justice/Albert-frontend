@@ -62,11 +62,12 @@ const fetchChatArchiveById = async (chatId: number) => {
     },
   })
 
+  console.log('Chat archive response = ', response)
   if (!response.ok) {
     console.error('error: response not ok', response)
     throw new Error('Network response was not ok', { cause: response })
   }
   const responseData: ChatArchive = await response.json()
-
+  console.log('Chat archive response in JSON = ', responseData)
   return responseData
 }

@@ -40,8 +40,9 @@ export function UserMessage({ questionInput, setQuestionInput }) {
       nextMessage: { text: questionInput, sender: 'user' },
     })
     let chatId = user.chatId
+    console.log('Chat ID = ', chatId)
 
-    if (user.chatId === 0) {
+    if (chatId === 0) {
       const headers = setHeaders(false)
       const chat_data = { chat_type: 'qa' }
       const chat = await useFetch(chatUrl, 'POST', {
